@@ -8,6 +8,12 @@ class TestRpg(unittest.TestCase):
         bobasis = character.Character()
         self.assertEqual(10, bobasis.get_hp())
 
+    def test_ten_attacks_kill(self):
+        bobasis = character.Character()
+        for i in range(10):
+            bobasis.recieve_damage()
+        self.assertEqual(0, bobasis.get_hp())
+
 
 if __name__ == '__main__':
     unittest.main()
